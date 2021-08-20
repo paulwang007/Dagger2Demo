@@ -1,4 +1,4 @@
-package com.paul.wang.myapplication
+package com.paul.wang.hiltdemo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

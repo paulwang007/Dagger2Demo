@@ -1,4 +1,4 @@
-package com.paul.wang.myapplication
+package com.paul.wang.hiltdemo
 
 import org.junit.Test
 
