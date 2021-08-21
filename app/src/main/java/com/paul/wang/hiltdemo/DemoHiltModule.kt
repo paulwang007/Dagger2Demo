@@ -4,11 +4,23 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import javax.inject.Qualifier
 
-@Module
-@InstallIn(ViewModelComponent::class)
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class MainDataRepo
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class SecondDataRepo
+
+@Module // Link this class to Hilt.
+@InstallIn(ViewModelComponent::class) // Adding all components into this scope.
 abstract class DemoHiltModule {
 
+    @Binds // Binding this interface implementation to Hilt.
+    abstract fun bindMainDataRepository(mainDataInterfaceImpl: DemoRepository) : MainDataInterface
+
     @Binds
-    abstract fun bindDataRepository(mainDataInterfaceImpl: DemoRepository) : MainDataInterface
+    abstract fun bindSecondDataRepository(secondDataModule: SecondDataRepository) : SecondDataRepository
 }
