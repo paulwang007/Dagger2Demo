@@ -19,8 +19,5 @@ annotation class SecondDataRepo
 abstract class DemoHiltModule {
 
     @Binds // Binding this interface implementation to Hilt.
-    abstract fun bindMainDataRepository(mainDataInterfaceImpl: DemoRepository) : MainDataInterface
-
-    @Binds
-    abstract fun bindSecondDataRepository(secondDataModule: SecondDataRepository) : SecondDataRepository
+    abstract fun bindMainDataRepository(mainDataInterfaceImpl: MainDataRepository) : MainDataInterface
 }
