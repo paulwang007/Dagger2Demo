@@ -31,7 +31,7 @@ class MainContentProvider: ContentProvider() {
         p3: Array<out String>?,
         p4: String?
     ): Cursor? {
-        // To use the Hilt EntryPoint
+        // To use the Hilt EntryPoint.
         val mainContentProviderEntryPoint = EntryPointAccessors.fromApplication(context?.applicationContext, MainContentProviderEntryPoint::class.java)
         val someString = mainContentProviderEntryPoint.getSomeString()
 
